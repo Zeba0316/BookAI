@@ -86,21 +86,21 @@ const MainContent = ({
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-[#0f172a] py-10 gap-10">
       {/* overview */}
-      <div className="h-[25vh] w-[65%] bg-[#1e293b] br-8 border-2 border-[rgba(255,255,255,0.1)] rounded-lg p-8 flex flex-col-reverse gap-2">
+      <div className="min-h-[15rem] w-[85%] bg-[#1e293b] br-8 border-2 border-[rgba(255,255,255,0.1)] rounded-lg p-8 flex flex-col-reverse gap-2 sm:w-[85%] lg:w-[60rem]" ref={overviewRef}>
         <p className="text-white text-xl">
           The Book Generator API allows you to generate books on various topics
           using different language models. This documentation provides details
           on how to use the API, including authentication, available endpoints,
           and code examples.
         </p>
-        <h2 className="text-3xl text-[#a4b3fb] font-medium" ref={overviewRef}>
+        <h2 className="text-3xl text-[#a4b3fb] font-medium" >
           Overview
         </h2>
       </div>
       {/* end overview */}
 
       {/* authentication */}
-      <div className="min-h-[50vh] w-[65%] bg-[#1e293b] br-8 border-2 border-[rgba(255,255,255,0.1)] rounded-lg p-8 flex flex-col-reverse gap-4">
+      <div className="min-h-[26rem] w-[85%] bg-[#1e293b] br-8 border-2 border-[rgba(255,255,255,0.1)] rounded-lg p-8 flex flex-col-reverse gap-4 sm:w-[85%] lg:w-[60rem]" ref={authRef}>
         {showKey ? (
           <div
             className={`w-[98%] h-[8vh] br-8 border-2 border-[rgba(255,255,255,0.1)] rounded-lg flex items-center pl-5 transition-all duration-300 ease-in-out`}
@@ -115,7 +115,7 @@ const MainContent = ({
           ></div>
         )}
         <button
-          className="w-[20%] h-[5.6vh] br-3 border-2 bg-[#22d3ee] rounded-lg border-none text-center font-bold px-[2vh] py-[1vh] text-xl  hover:bg-[#1e3a8a] hover:-translate-y-1 transition duration-200 ease-in-out"
+          className="w-[fit-content] h-[5.6vh] br-3 border-2 bg-[#22d3ee] rounded-lg border-none text-center font-bold px-[2vw] py-auto text-xl  hover:bg-[#1e3a8a] hover:-translate-y-1 transition duration-200 ease-in-out"
           onClick={generateKey}
         >
           Generate API Key
@@ -124,7 +124,7 @@ const MainContent = ({
           To generate an API key, use the button below:
         </p>
         <div className="w-[98%] h-[8vh] br-8 border-2 border-[rgba(255,255,255,0.1)] rounded-lg">
-          <p className="w-[fit-content] h-[7.7vh] br-8 border-2 border-[rgba(255,255,255,0.1)] ml-7 rounded-lg text-center text-white px-[2vh] py-[2vh] text-xl">
+          <p className="w-[fit-content] h-[7.5vh] br-8 border-2 border-[rgba(255,255,255,0.1)] ml-7 rounded-lg text-center text-white px-[2vh] py-[2vh] text-xl">
             X-API-Key: YOUR_API_KEY
           </p>
         </div>
@@ -132,14 +132,14 @@ const MainContent = ({
           To use the API, you need to include your API key in the header of each
           request:
         </p>
-        <h2 className="text-3xl text-[#a4b3fb] font-medium" ref={authRef}>
+        <h2 className="text-3xl text-[#a4b3fb] font-medium" >
           Authentication
         </h2>
       </div>
       {/* end authentication */}
 
       {/* endpoint */}
-      <div className="min-h-[90vh] w-[65%] bg-[#1e293b] rounded-lg border-2 border-[rgba(255,255,255,0.1)] p-8 pt-20 flex flex-col-reverse gap-10">
+      <div className="min-h-[41rem] w-[85%] bg-[#1e293b] rounded-lg border-2 border-[rgba(255,255,255,0.1)] p-8 pt-20 flex flex-col-reverse gap-10 sm:w-[85%] lg:w-[60rem]" ref={endpointRef}>
         <div className="w-[98%] h-[18vh] br-8 border-2 border-[rgba(255,255,255,0.1)] rounded-lg">
           <img
             src="./assets/response.png"
@@ -190,14 +190,14 @@ const MainContent = ({
             </button>
           </div>
         </div>
-        <h2 className="text-3xl text-[#a4b3fb] font-medium" ref={endpointRef}>
+        <h2 className="text-3xl text-[#a4b3fb] font-medium" >
           Endpoints
         </h2>
       </div>
       {/* end endpoint */}
 
       {/* tutorial */}
-      <div className="h-[65vh] w-[65%] bg-[#1e293b] br-8 border-2 border-[rgba(255,255,255,0.1)] rounded-lg p-8 flex flex-col-reverse gap-10">
+      <div className="min-h-[41rem] w-[85%] bg-[#1e293b] br-8 border-2 border-[rgba(255,255,255,0.1)] rounded-lg p-8 flex flex-col-reverse gap-10 sm:w-[85%] lg:w-[60rem]"  ref={tutorialRef}>
         <div>
           <h3 className="text-2xl text-[#a4b3fb] font-medium">
             Step 4: Retrieve the Generated Book
@@ -235,15 +235,15 @@ const MainContent = ({
             above.
           </p>
         </div>
-        <h2 className="text-3xl text-[#a4b3fb] font-medium" ref={tutorialRef}>
+        <h2 className="text-3xl text-[#a4b3fb] font-medium" >
           Tutorial
         </h2>
       </div>
       {/* end tutorial */}
 
       {/* code example */}
-      <div className="min-h-[90vh] w-[65%] bg-[#1e293b] rounded-lg border-2 border-[rgba(255,255,255,0.1)] p-8 pt-20 flex flex-col gap-10">
-        <h1  className="text-3xl text-[#a4b3fb] font-medium" ref={codeRef}>Code Examples</h1>
+      <div className="min-h-[32rem] w-[85%] bg-[#1e293b] rounded-lg border-2 border-[rgba(255,255,255,0.1)] p-8 pt-20 flex flex-col gap-10 sm:w-[85%] lg:w-[60rem]" ref={codeRef}>
+        <h1  className="text-3xl text-[#a4b3fb] font-medium" >Code Examples</h1>
         <div>
           <h2 className="text-2xl text-[#a4b3fb] font-medium">Python</h2>
           <div className="w-[98%] h-[18vh] br-8 border-2 border-[rgba(255,255,255,0.1)] rounded-lg">
@@ -266,9 +266,9 @@ const MainContent = ({
       {/* end code example */}
 
       {/* pricing */}
-      <div className="h-[90vh] w-[65%] bg-[#1e293b] rounded-lg border-2 border-[rgba(255,255,255,0.1)] p-10  flex flex-col pt-20 gap-10">
+      <div className="min-h-[41rem] w-[85%] bg-[#1e293b] rounded-lg border-2 border-[rgba(255,255,255,0.1)] p-10  flex flex-col pt-20 gap-10 sm:w-[85%] lg:w-[60rem]" ref={priceRef}>
         <div className="flex flex-col gap-1">
-          <h1 className="text-3xl text-[#a4b3fb] font-medium" ref={priceRef}>
+          <h1 className="text-3xl text-[#a4b3fb] font-medium" >
             API Pricing
           </h1>
           <p className="text-white text-xl">
