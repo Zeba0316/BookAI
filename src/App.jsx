@@ -6,6 +6,9 @@ function App() {
 const overviewRef=useRef(null);
 const authRef=useRef(null);
 const tutorialRef=useRef(null);
+const endpointRef=useRef(null);
+const priceRef=useRef(null);
+const codeRef=useRef(null);
 const scrollToOverview=()=>{
   overviewRef.current.scrollIntoView({behavior:"smooth"})
 }
@@ -14,6 +17,15 @@ const scrollToAuth=()=>{
 }
 const scrollToTutorial=()=>{
   tutorialRef.current.scrollIntoView({behavior:"smooth"})
+}
+const scrollToEndpoint=()=>{
+  endpointRef.current.scrollIntoView({behavior:"smooth"})
+}
+const scrollToPrice=()=>{
+  priceRef.current.scrollIntoView({behavior:"smooth"})
+}
+const scrollToCode=()=>{
+  codeRef.current.scrollIntoView({behavior:"smooth"})
 }
    
   return (
@@ -26,8 +38,8 @@ const scrollToTutorial=()=>{
           Book Generator API
         </h1>
       </div>
-      <Nav scrollToOverview={scrollToOverview} scrollToAuth={scrollToAuth} scrollToTutorial={scrollToTutorial} />
-      <MainContent overviewRef={overviewRef} authRef={authRef} tutorialRef={tutorialRef}/>
+      <Nav scrollToOverview={scrollToOverview} scrollToAuth={scrollToAuth} scrollToTutorial={scrollToTutorial} scrollToEndpoint={scrollToEndpoint} scrollToPrice={scrollToPrice} scrollToCode={scrollToCode} />
+      <MainContent overviewRef={overviewRef} authRef={authRef} tutorialRef={tutorialRef} endpointRef={endpointRef} priceRef={priceRef} codeRef={codeRef}/>
     </div>
   );
 }
